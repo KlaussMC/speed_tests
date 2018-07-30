@@ -1,0 +1,17 @@
+All programs are run for exactly 1s.
+number is amount of iterations the language could complete in set time.
+
+Basic Looping Test
+
+                run 1       run 2       run 3
+    PHP         842852      829566      827484
+    Python      844127      883592      865530
+    VBS         2110165     2130019     2079888
+    C#          3566571     3587466     3529328
+    VB.net      3670895     3551380     3683121
+    JavaScript  4988264     4896204     4951549
+    C++         10968893    10938462    10992705
+    Java        185528608   186003329   186150044
+    R           220995      228350      223672
+
+Basic Looping Test + Random number
