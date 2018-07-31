@@ -1,10 +1,10 @@
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=_+`~,<.>/?;:";
-const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 function random(seed) {
 	seed += seed[0] + letters[letters.indexOf(seed[seed.length])];
 	let casingFactor = 1;
 	for (let i in seed) {
-		if (uppercaseLetters.indexOf(seed[i])) {
+		if (uppercaseletters.indexOf(seed[i])) {
 			casingFactor += 1;
 		}
 	}
@@ -40,10 +40,11 @@ function loop (number, start, stop) {
 	}
 }
 function format (answer) {
-	let newAnswer = 0
-	for (let i = 0; i < answer.length; i++) {
-		newAnswer += letters.indexOf(answer[i]);
-	}
+	// let newAnswer = 0
+	//
+	// for (let i = 0; i < answer.length; i++) {
+	// 	newAnswer += letters.indexOf(answer[i]);
+	// }
 	return answer.substring(1);
 }
 function reverse(answer) {
@@ -65,23 +66,6 @@ function lengthen (string, seed) {
 	}
 	return newString;
 }
-function toNumber (string) {
-	let number = 0;
-	for (let i = 0; i < string.length; i++) {
-		number += letters.indexOf(string[i]);
-	}
-	// number /= string.length;
-	return map(loop(number, 0, 100), 0, 100, 0, 1);
-}
-function map (n, start1, stop1, start2, stop2) {
-	return (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
-}
-module.exports.randNum = () => {
-	return toNumber(random("" + new Date().getTime()))
-}
-module.exports.randStr = seed => {
-	return random(seed || ("" + new Date().getTime()))
-}
-// console.log(toNumber(random("" + new Date().getTime())))
-// console.log(random("" + new Date().getTime()))
-console.log(random("super clean shit"))
+let startTime = new Date().getTime();
+console.log(random(process.argv[2] || "hello world"))
+console.log("completed in " Date.getTime() - startTime + "ms");

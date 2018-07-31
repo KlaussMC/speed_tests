@@ -1,0 +1,2 @@
+this regex will match all empty lines.
+((\r\n|\n|\r)$)|(^(\r\n|\n|\r))|^\s*$
