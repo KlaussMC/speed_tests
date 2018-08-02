@@ -9,7 +9,7 @@ function random(seed) {
 		}
 	}
 	let length = seed.length;
-	let rndNumber = 0;
+	let rndNumber = "";
 	casingFactor *= length;
 	for (let i = 0; i < length; i++) {
 		rndNumber += getChar((((i * casingFactor) + 1) * (letters.indexOf(seed[i]) * i)) + length);
@@ -40,11 +40,6 @@ function loop (number, start, stop) {
 	}
 }
 function format (answer) {
-	// let newAnswer = 0
-	//
-	// for (let i = 0; i < answer.length; i++) {
-	// 	newAnswer += letters.indexOf(answer[i]);
-	// }
 	return answer.substring(1);
 }
 function reverse(answer) {
@@ -66,6 +61,8 @@ function lengthen (string, seed) {
 	}
 	return newString;
 }
-let startTime = new Date().getTime();
-console.log(random(process.argv[2] || "hello world"))
-console.log("completed in " Date.getTime() - startTime + "ms");
+// let startTime = new Date().getTime();
+// console.log(random(process.argv[2] || "hello world"))
+// console.log("completed in " Date.getTime() - startTime + "ms");
+
+console.log(random("hello world"))
